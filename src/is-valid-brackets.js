@@ -1,6 +1,8 @@
 /**
+ * Check if brackets are valid
  *
- * @param {string} str
+ * @param {string} str string with brackets
+ * @returns {boolean} whether brackets are valid
  */
 function isValidBrackets(str) {
   let after = str.replace(/[a-z]/gi, '');

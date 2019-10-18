@@ -1,7 +1,9 @@
 /**
+ * Fuzzy search of substring in string
  *
  * @param {string} sub substring
  * @param {string} str string
+ * @returns {boolean} whether is substing in string
  */
 function fuzzySearch(sub, str) {
   let lastIndex = -1;

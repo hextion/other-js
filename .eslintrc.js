@@ -5,7 +5,7 @@ module.exports = {
     es6: true,
     jest: true
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:jsdoc/recommended'],
   parserOptions: {
     ecmaVersion: 2018,
   },

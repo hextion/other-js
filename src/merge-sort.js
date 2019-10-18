@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
+
 /**
+ * Merge arrays
  *
- * @param {[number]} arr1
- * @param {[number]} arr2
+ * @param {[number]} arr1 array
+ * @param {[number]} arr2 array
+ * @returns {[number]} merged array
  */
-// eslint-disable-next-line no-unused-vars
 function merge(arr1, arr2) {
   let res = [];
   let i = 0;
@@ -25,10 +28,13 @@ function merge(arr1, arr2) {
   }
   return res;
 }
+
 /**
+ * Merge arrays recursive
  *
- * @param {[number]} arr1
- * @param {[number]} arr2
+ * @param {[number]} arr1 array
+ * @param {[number]} arr2 array
+ * @returns {[number]} merged array
  */
 function mergeRecursive(arr1, arr2) {
   if (arr1.length === 0) {
@@ -45,8 +51,10 @@ function mergeRecursive(arr1, arr2) {
 }
 
 /**
+ * Merge sort array of numbers
  *
- * @param {[number]} arr
+ * @param {[number]} arr array
+ * @returns {[number]} sorted array
  */
 function mergeSort(arr) {
   if (arr.length <= 1) {

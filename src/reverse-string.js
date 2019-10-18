@@ -1,6 +1,8 @@
 /**
+ * Reverse string
  *
- * @param {string} str
+ * @param {string} str string
+ * @returns {string} reversed string
  */
 function reverse(str) {
   let reversed = '';

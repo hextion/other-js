@@ -1,6 +1,8 @@
 /**
+ * equalsAt
  *
- * @param {[number]} numbers
+ * @param {[number]} numbers array
+ * @returns {number} index
  */
 function equalsAt(numbers) {
   const leftToRight = numbers.reduce((acc, num) => {
