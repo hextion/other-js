@@ -3,7 +3,7 @@
  *
  * @param {string} sub substring
  * @param {string} str string
- * @returns {boolean} whether is substing in string
+ * @returns {boolean} whether substring is in string
  */
 function fuzzySearch(sub, str) {
   let lastIndex = -1;
