@@ -13,4 +13,5 @@ it('returns false', () => {
   expect(areAnagrams('abc', 'abcc')).toBe(false);
   expect(areAnagrams('abc', 'abcd')).toBe(false);
   expect(areAnagrams('abcd', 'abce')).toBe(false);
+  expect(areAnagrams('abcdd', 'abcde')).toBe(false);
 });
