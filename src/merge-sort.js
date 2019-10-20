@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 
+/* istanbul ignore next */
 /**
  * Merge arrays
  *
