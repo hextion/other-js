@@ -16,6 +16,9 @@ function mapFromString(str) {
  * @returns {boolean} whether strings are anagrams
  */
 function areAnagrams(a, b) {
+  if (a.length !== b.length) {
+    return false;
+  }
   const aMap = mapFromString(a);
   const bMap = mapFromString(b);
   if (aMap.size !== bMap.size) {
