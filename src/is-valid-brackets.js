@@ -9,7 +9,7 @@ function isValidBrackets(str) {
   let before;
   do {
     before = after;
-    after = after.replace(/(\[\]|{}|\(\))/g, '');
+    after = after.replace(/\[\]|{}|\(\)/g, '');
   } while (before !== after);
   return after.length === 0;
 }
