@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Other js",
   "scripts": {
+    "lint": "eslint src/**/*.js",
     "test": "jest"
   },
   "author": "Salavat Gizatov <100ishundred@gmail.com> (https://github.com/hextion)",

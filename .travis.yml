@@ -8,5 +8,6 @@ cache: npm
 install:
   - npm ci
 script:
+  - npm run lint
   - npm test -- --coverage
   - npx codecov
