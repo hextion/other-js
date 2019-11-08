@@ -8,13 +8,13 @@
   "author": "Salavat Gizatov <100ishundred@gmail.com> (https://github.com/hextion)",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^6.2.2",
-    "eslint-config-prettier": "^6.1.0",
-    "eslint-plugin-jsdoc": "^15.12.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^3.0.4",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-jsdoc": "^15.12.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
     "jest": "^24.9.0",
-    "lint-staged": "^9.2.4",
+    "lint-staged": "^9.4.2",
     "prettier": "1.18.2"
   }
 }
