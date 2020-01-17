@@ -1,14 +1,14 @@
 /**
  * Fuzzy search of substring in string
  *
- * @param {string} sub substring
- * @param {string} str string
+ * @param {string} substring substring
+ * @param {string} string string
  * @returns {boolean} whether substring is in string
  */
-function fuzzySearch(sub, str) {
+function fuzzySearch(substring, string) {
   let lastIndex = -1;
-  for (const letter of sub) {
-    const index = str.indexOf(letter);
+  for (const letter of substring) {
+    const index = string.indexOf(letter);
     if (index > lastIndex) {
       lastIndex = index;
     } else {
