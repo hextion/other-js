@@ -7,8 +7,8 @@
  */
 function fuzzySearch(sub, str) {
   let lastIndex = -1;
-  for (let i = 0; i < sub.length; i++) {
-    const index = str.indexOf(sub[i]);
+  for (const letter of sub) {
+    const index = str.indexOf(letter);
     if (index > lastIndex) {
       lastIndex = index;
     } else {
