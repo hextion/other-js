@@ -1,7 +1,7 @@
 const { unique } = require('./unique');
 
 it('should return empty array', () => {
-  expect(unique([], e => e)).toMatchObject([]);
+  expect(unique([])).toMatchObject([]);
 });
 
 it('should return array with uniq items', () => {
