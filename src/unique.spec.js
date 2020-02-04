@@ -34,3 +34,7 @@ it('should return array with uniq items', () => {
     },
   ]);
 });
+
+it('should return array with uniq numbers', () => {
+  expect(unique([1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 4, 5])).toMatchObject([1, 2, 3, 4, 5, 6, 7]);
+});
