@@ -4,6 +4,7 @@
   "description": "Other js",
   "scripts": {
     "format": "prettier --list-different \"**/*.{js,json,md,html,yml}\"",
+    "format:fix": "npm run format -- --write",
     "lint": "eslint --ext .js --max-warnings 0 src",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest"
