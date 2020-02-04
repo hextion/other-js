@@ -4,6 +4,7 @@
   "description": "Other js",
   "scripts": {
     "lint": "eslint --ext .js --max-warnings 0 src",
+    "lint:fix": "npm run lint -- --fix",
     "test": "jest"
   },
   "author": "Salavat Gizatov <100ishundred@gmail.com> (https://github.com/hextion)",
