@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Other js",
   "scripts": {
+    "format": "prettier --list-different \"**/*.{js,json,md,html,yml}\"",
     "lint": "eslint --ext .js --max-warnings 0 src",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest"
