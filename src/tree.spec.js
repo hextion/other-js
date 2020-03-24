@@ -28,13 +28,14 @@ it('should return tree', () => {
         {
           id: 2,
           parentId: 1,
+          children: null,
         },
       ],
     },
     {
       id: 3,
       parentId: null,
-      children: [],
+      children: null,
     },
   ]);
 });
