@@ -1,3 +1,5 @@
+const CHARS_REGEXP = /[a-z]/gi;
+
 /**
  * Check if brackets are valid
  *
@@ -5,7 +7,7 @@
  * @returns {boolean} whether brackets are valid
  */
 function isValidBrackets(str) {
-  let after = str.replace(/[a-z]/gi, '');
+  let after = str.replace(CHARS_REGEXP, '');
   let before;
   do {
     before = after;
