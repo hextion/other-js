@@ -8,7 +8,7 @@ function makeTree(arr) {
     .map(each => {
       let children = shalow.filter(({ parentId }) => parentId === each.id);
       children = children.length > 0 ? children : null;
-      return Object.assign(each, { children })
+      return Object.assign(each, { children });
     })
     .filter(({ parentId }) => parentId === null);
 }
