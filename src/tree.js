@@ -3,7 +3,7 @@
  * @returns {Array<object>} tree
  */
 function makeTree(arr) {
-  const shalow = arr.map(each => Object.assign({}, each));
+  const shalow = arr.map(each => ({ ...each }));
   return shalow
     .map(each => {
       let children = shalow.filter(({ parentId }) => parentId === each.id);
