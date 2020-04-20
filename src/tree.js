@@ -5,18 +5,22 @@ const defaultOptions = {
 };
 
 /**
+ * Merge objects into one
+ *
+ * @param {...object} objects object
+ * @returns {object} object
+ */
+function merge(...objects) {
+  return objects.reduce((acc, object) => ({ ...acc, ...object }), {});
+}
+
+/**
  * @param {Array<object>} arr array
  * @param {object} [options] options
  * @returns {Array<object>} tree
  */
 function makeTree(arr, options = defaultOptions) {
-  const { keySelector, parentKeySelector, transform } =
-    options === defaultOptions
-      ? options
-      : {
-          ...defaultOptions,
-          ...(options || {}),
-        };
+  const { keySelector, parentKeySelector, transform } = merge(defaultOptions, options || {});
   const shalow = arr.map(each => transform({ ...each }));
   return shalow
     .map(item => {
