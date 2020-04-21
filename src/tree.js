@@ -13,11 +13,11 @@ const defaultOptions = {
  */
 function makeTree(arr, options = defaultOptions) {
   const { keySelector, parentKeySelector, transform } = merge(defaultOptions, options || {});
-  const shalow = arr.map(each => transform({ ...each }));
-  return shalow
+  const shallow = arr.map(each => transform({ ...each }));
+  return shallow
     .map(item => {
       const key = keySelector(item);
-      let children = shalow.filter(item => parentKeySelector(item) === key);
+      let children = shallow.filter(item => parentKeySelector(item) === key);
       children = children.length > 0 ? children : null;
       return Object.assign(item, { children });
     })
