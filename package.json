@@ -22,5 +22,8 @@
     "jest": "^24.9.0",
     "lint-staged": "^9.4.2",
     "prettier": "1.18.2"
+  },
+  "dependencies": {
+    "assert": "^2.0.0"
   }
 }

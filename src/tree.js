@@ -1,18 +1,10 @@
+const { merge } = require('./merge');
+
 const defaultOptions = {
   keySelector: item => item.key,
   parentKeySelector: item => item.parentKey,
   transform: item => item,
 };
-
-/**
- * Merge objects into one
- *
- * @param {...object} objects object
- * @returns {object} object
- */
-function merge(...objects) {
-  return objects.reduce((acc, object) => ({ ...acc, ...object }), {});
-}
 
 /**
  * @param {Array<object>} arr array
