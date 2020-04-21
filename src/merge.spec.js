@@ -2,6 +2,7 @@ const { merge } = require('./merge');
 
 describe('merge', () => {
   it('should merge objects', () => {
+    expect(merge()).toMatchObject({});
     expect(merge({ a: 1 }, { b: 2 })).toMatchObject({ a: 1, b: 2 });
     expect(merge({ a: 1, b: 1 }, { b: 2 })).toMatchObject({ a: 1, b: 2 });
   });
