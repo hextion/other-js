@@ -8,8 +8,7 @@
 function fuzzySearch(substring, string) {
   let lastIndex = -1;
   for (const letter of substring) {
-    const nextIndex =
-      lastIndex === -1 ? string.indexOf(letter) : lastIndex + string.substring(lastIndex + 1).indexOf(letter) + 1;
+    const nextIndex = string.indexOf(letter, lastIndex + 1);
     if (nextIndex > lastIndex) {
       lastIndex = nextIndex;
       continue;
