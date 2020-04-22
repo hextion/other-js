@@ -10,19 +10,19 @@ describe('merge', () => {
   it('should throw an error', () => {
     const error = '[merge]: arguments must be objects';
     expect(() => {
-      merge('')
+      merge('');
     }).toThrow(error);
     expect(() => {
-      merge(1)
+      merge(1);
     }).toThrow(error);
     expect(() => {
-      merge(false)
+      merge(false);
     }).toThrow(error);
     expect(() => {
-      merge(null)
+      merge(null);
     }).toThrow(error);
     expect(() => {
-      merge(undefined)
+      merge(undefined);
     }).toThrow(error);
-  })
+  });
 });

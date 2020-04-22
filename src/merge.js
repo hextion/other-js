@@ -9,10 +9,10 @@ const assert = require('assert').strict;
 function merge(...objects) {
   return objects.reduce((acc, object) => {
     assert(!(object === null) && typeof object === 'object', '[merge]: arguments must be objects');
-    return { ...acc, ...object }
+    return { ...acc, ...object };
   }, {});
 }
 
 module.exports = {
   merge,
-}
+};
