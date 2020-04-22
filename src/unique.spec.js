@@ -21,7 +21,7 @@ it('should return array with uniq items', () => {
           v: 2,
         },
       ],
-      e => e.v
+      (e) => e.v
     )
   ).toMatchObject([
     {
