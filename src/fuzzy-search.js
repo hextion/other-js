@@ -9,11 +9,10 @@ function fuzzySearch(substring, string) {
   let lastIndex = -1;
   for (const letter of substring) {
     const nextIndex = string.indexOf(letter, lastIndex + 1);
-    if (nextIndex > lastIndex) {
-      lastIndex = nextIndex;
-      continue;
+    if (nextIndex === -1) {
+      return false;
     }
-    return false;
+    lastIndex = nextIndex;
   }
   return true;
 }
