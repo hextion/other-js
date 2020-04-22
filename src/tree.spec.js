@@ -59,8 +59,8 @@ describe('should return tree', () => {
           },
         ],
         {
-          keySelector: item => item.id,
-          parentKeySelector: item => item.parentId,
+          keySelector: (item) => item.id,
+          parentKeySelector: (item) => item.parentId,
         }
       )
     ).toMatchObject([
@@ -99,7 +99,7 @@ describe('should return tree', () => {
           },
         ],
         {
-          transform: item => ({ key: item.id, parentKey: item.parentId }),
+          transform: (item) => ({ key: item.id, parentKey: item.parentId }),
         }
       )
     ).toMatchObject([
