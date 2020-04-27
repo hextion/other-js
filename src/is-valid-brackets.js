@@ -1,6 +1,3 @@
-const CHARS_REGEXP = /[a-z]/gi;
-const BRACKETS_REGEXP = /\[\]|{}|\(\)/g;
-
 /**
  * Check if brackets are valid
  *
@@ -8,9 +5,9 @@ const BRACKETS_REGEXP = /\[\]|{}|\(\)/g;
  * @returns {boolean} whether brackets are valid
  */
 function isValidBrackets(str) {
-  let previous = str.replace(CHARS_REGEXP, '');
+  let previous = str.replace(/[a-z]/gi, '');
   let current;
-  while ((current = previous.replace(BRACKETS_REGEXP, '')) !== previous) {
+  while ((current = previous.replace(/\[\]|{}|\(\)/g, '')) !== previous) {
     previous = current;
   }
   return current.length === 0;
