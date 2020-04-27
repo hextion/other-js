@@ -8,13 +8,12 @@ const BRACKETS_REGEXP = /\[\]|{}|\(\)/g;
  * @returns {boolean} whether brackets are valid
  */
 function isValidBrackets(str) {
-  let after = str.replace(CHARS_REGEXP, '');
-  let before;
-  do {
-    before = after;
-    after = before.replace(BRACKETS_REGEXP, '');
-  } while (before !== after);
-  return after.length === 0;
+  let previous = str.replace(CHARS_REGEXP, '');
+  let current;
+  while ((current = previous.replace(BRACKETS_REGEXP, '')) !== previous) {
+    previous = current;
+  }
+  return current.length === 0;
 }
 
 module.exports = { isValidBrackets };
