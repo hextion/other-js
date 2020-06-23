@@ -14,7 +14,7 @@
   "author": "Salavat Gizatov <100ishundred@gmail.com> (https://github.com/hextion)",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^7.2.0",
+    "eslint": "^7.3.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jsdoc": "^27.0.6",
     "husky": "^4.2.5",
