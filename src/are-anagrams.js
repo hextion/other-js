@@ -5,7 +5,10 @@
  * @returns {Map<string, number>} map
  */
 function mapFromString(str) {
-  return str.split('').reduce((map, letter) => map.set(letter, map.has(letter) ? map.get(letter) + 1 : 1), new Map());
+  return str.split('').reduce((map, letter) => {
+    const amount = map.has(letter) ? map.get(letter) : 0;
+    return map.set(letter, amount + 1);
+  }, new Map());
 }
 
 /**
