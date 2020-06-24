@@ -1,7 +1,7 @@
 /**
  * equalsAt
  *
- * @param {[number]} numbers array
+ * @param {number[]} numbers array
  * @returns {number} index
  */
 function equalsAt(numbers) {
