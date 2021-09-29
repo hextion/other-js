@@ -1,4 +1,4 @@
-const { sameStructureAs } = require('./same-structure-as');
+const { sameStructureAs } = require('../same-structure-as');
 
 it('returns true', () => {
   expect(sameStructureAs([1, 1, 1], [2, 2, 2])).toBe(true);

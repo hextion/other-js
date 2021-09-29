@@ -1,4 +1,4 @@
-const { equalsAt } = require('./equal-sides-of-an-array');
+const { equalsAt } = require('../equal-sides-of-an-array');
 
 it('works', () => {
   expect(equalsAt([1, 2, 3, 4, 3, 2, 1])).toEqual(3);

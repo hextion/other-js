@@ -1,4 +1,4 @@
-const { mergeSort } = require('./merge-sort');
+const { mergeSort } = require('../merge-sort');
 
 it('sorts array', () => {
   expect(mergeSort([10, 1, 3, 2, 5, 7])).toEqual([1, 2, 3, 5, 7, 10]);

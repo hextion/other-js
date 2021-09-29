@@ -1,4 +1,4 @@
-const { fuzzySearch } = require('./fuzzy-search');
+const { fuzzySearch } = require('../fuzzy-search');
 
 it('returns true', () => {
   expect(fuzzySearch('', 'ab')).toBe(true);

@@ -1,4 +1,4 @@
-const { quickSort } = require('./quick-sort');
+const { quickSort } = require('../quick-sort');
 
 it('should return empty array', () => {
   expect(quickSort([])).toMatchObject([]);

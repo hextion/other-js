@@ -1,4 +1,4 @@
-const { unique } = require('./unique');
+const { unique } = require('../unique');
 
 it('should return empty array', () => {
   expect(unique([])).toMatchObject([]);

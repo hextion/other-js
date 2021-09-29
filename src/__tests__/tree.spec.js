@@ -1,4 +1,4 @@
-const { makeTree } = require('./tree');
+const { makeTree } = require('../tree');
 
 it('should return empty array', () => {
   expect(makeTree([])).toMatchObject([]);

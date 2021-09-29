@@ -1,4 +1,4 @@
-const { isValidBrackets } = require('./is-valid-brackets');
+const { isValidBrackets } = require('../is-valid-brackets');
 
 it('returns true', () => {
   expect(isValidBrackets('(foo)')).toBe(true);

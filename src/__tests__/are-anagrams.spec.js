@@ -1,4 +1,4 @@
-const { areAnagrams } = require('./are-anagrams');
+const { areAnagrams } = require('../are-anagrams');
 
 it('returns true', () => {
   expect(areAnagrams('', '')).toBe(true);
