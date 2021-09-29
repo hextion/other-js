@@ -7,12 +7,9 @@
  */
 function fuzzySearch(substring, string) {
   let lastIndex = -1;
-  for (const letter of substring) {
-    const nextIndex = string.indexOf(letter, lastIndex + 1);
-    if (nextIndex === -1) {
-      return false;
-    }
-    lastIndex = nextIndex;
+  for (let i = 0; i < substring.length; i++) {
+    lastIndex = string.indexOf(substring[i], lastIndex + 1);
+    if (lastIndex === -1) return false;
   }
   return true;
 }
