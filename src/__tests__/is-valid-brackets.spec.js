@@ -10,4 +10,6 @@ it('returns true', () => {
 it('returns false', () => {
   expect(isValidBrackets('(foo')).toBe(false);
   expect(isValidBrackets('{f[o}o]')).toBe(false);
+  expect(isValidBrackets('{f(o]o]')).toBe(false);
+  expect(isValidBrackets('{f{o)o]')).toBe(false);
 });
