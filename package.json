@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Salavat Gizatov <100ishundred@gmail.com> (https://github.com/hextion)",
   "scripts": {
-    "format": "prettier --list-different \"**/*.{js,json,md,yml}\"",
+    "format": "prettier --check \"**/*.{js,json,md,yml}\"",
     "format:fix": "npm run format -- --write",
     "lint": "eslint --ext .js --max-warnings 0 src",
     "lint:fix": "npm run lint -- --fix",
@@ -18,12 +18,12 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsdoc": "^29.1.4",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
-    "prettier": "2.0.5"
+    "prettier": "2.4.1"
   },
   "engines": {
     "npm": ">=7.0.0"
