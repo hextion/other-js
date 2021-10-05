@@ -1,124 +1,49 @@
 const { makeTree } = require('../tree');
 
-it('should return empty array', () => {
-  expect(makeTree([])).toMatchObject([]);
-});
-
-describe('should return tree', () => {
-  it('should use default options', () => {
-    expect(
-      makeTree([
+it('should return tree', () => {
+  expect(
+    makeTree(
+      [
         {
-          key: 1,
-          parentKey: null,
+          id: 1,
+          parentId: null,
         },
         {
-          key: 2,
-          parentKey: 1,
+          id: 2,
+          parentId: 1,
         },
         {
-          key: 3,
-          parentKey: null,
+          id: 3,
+          parentId: null,
         },
-      ])
-    ).toMatchObject([
+      ],
       {
-        key: 1,
-        parentKey: null,
-        children: [
-          {
-            key: 2,
-            parentKey: 1,
-            children: null,
-          },
-        ],
-      },
-      {
-        key: 3,
-        parentKey: null,
-        children: null,
-      },
-    ]);
-  });
-
-  it('should use passed options', () => {
-    expect(
-      makeTree(
-        [
-          {
-            id: 1,
-            parentId: null,
-          },
-          {
-            id: 2,
-            parentId: 1,
-          },
-          {
-            id: 3,
-            parentId: null,
-          },
-        ],
-        {
-          keySelector: (item) => item.id,
-          parentKeySelector: (item) => item.parentId,
-        }
-      )
-    ).toMatchObject([
-      {
+        keySelector: (item) => item.id,
+        parentKeySelector: (item) => item.parentId,
+      }
+    )
+  ).toMatchObject([
+    {
+      value: {
         id: 1,
         parentId: null,
-        children: [
-          {
+      },
+      children: [
+        {
+          value: {
             id: 2,
             parentId: 1,
-            children: null,
           },
-        ],
-      },
-      {
+          children: null,
+        },
+      ],
+    },
+    {
+      value: {
         id: 3,
         parentId: null,
-        children: null,
       },
-    ]);
-
-    expect(
-      makeTree(
-        [
-          {
-            id: 1,
-            parentId: null,
-          },
-          {
-            id: 2,
-            parentId: 1,
-          },
-          {
-            id: 3,
-            parentId: null,
-          },
-        ],
-        {
-          transform: (item) => ({ key: item.id, parentKey: item.parentId }),
-        }
-      )
-    ).toMatchObject([
-      {
-        key: 1,
-        parentKey: null,
-        children: [
-          {
-            key: 2,
-            parentKey: 1,
-            children: null,
-          },
-        ],
-      },
-      {
-        key: 3,
-        parentKey: null,
-        children: null,
-      },
-    ]);
-  });
+      children: null,
+    },
+  ]);
 });

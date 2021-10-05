@@ -1,27 +1,20 @@
-const { merge } = require('./merge');
-
-const defaultOptions = {
-  keySelector: (item) => item.key,
-  parentKeySelector: (item) => item.parentKey,
-  transform: (item) => item,
-};
-
 /**
  * @param {Array<object>} arr array
- * @param {object} [options] options
+ * @param {object} options options
+ * @param {Function} options.keySelector key selector
+ * @param {Function} options.parentKeySelector parent key selector
  * @returns {Array<object>} tree
  */
-function makeTree(arr, options = defaultOptions) {
-  const { keySelector, parentKeySelector, transform } = merge(defaultOptions, options || {});
-  const shallow = arr.map((each) => transform({ ...each }));
-  return shallow
-    .map((item) => {
-      const key = keySelector(item);
-      let children = shallow.filter((item) => parentKeySelector(item) === key);
+function makeTree(arr, { keySelector, parentKeySelector }) {
+  return arr
+    .map((value) => ({ value }))
+    .map((node, _, flat) => {
+      const key = keySelector(node.value);
+      let children = flat.filter((node) => parentKeySelector(node.value) === key);
       children = children.length > 0 ? children : null;
-      return Object.assign(item, { children });
+      return Object.assign(node, { children });
     })
-    .filter((item) => parentKeySelector(item) === null);
+    .filter((node) => parentKeySelector(node.value) === null);
 }
 
 module.exports = { makeTree };
