@@ -1,7 +1,7 @@
 language: node_js
-node_js:
-  - 'lts/*'
 cache: npm
+before_install:
+  - npm i -g npm@^7
 install:
   - npm ci
 script:
