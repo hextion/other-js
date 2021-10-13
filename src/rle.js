@@ -1,14 +1,4 @@
 /**
- * Transform entry to string
- *
- * @param {object} entry entry
- * @returns {string} entry string
- */
-function transform(entry) {
-  return entry.char + (entry.count > 1 ? entry.count : '');
-}
-
-/**
  * RLE
  *
  * @param {string} str input
@@ -17,20 +7,26 @@ function transform(entry) {
 function RLE(str) {
   if (!/^[A-Z]*$/.test(str)) throw new Error('Invalid string: ' + str);
 
-  let entry = { char: '', count: 0 };
+  const entry = {
+    char: '',
+    count: 0,
+    toString() {
+      return this.char + (this.count > 1 ? this.count : '');
+    },
+  };
   let result = '';
 
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
     if (entry.char === char) entry.count++;
     else {
-      result += transform(entry);
+      result += entry;
       entry.char = char;
       entry.count = 1;
     }
   }
 
-  result += transform(entry);
+  result += entry;
 
   return result;
 }
