@@ -5,7 +5,7 @@
  * @returns {string} output
  */
 function RLE(str) {
-  if (!/^[A-Z]*$/.test(str)) throw new Error('Invalid string: ' + str);
+  if (!/^[A-Z]+$/.test(str)) throw new Error('Invalid string: ' + str);
 
   const entry = {
     char: '',
