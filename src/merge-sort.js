@@ -9,7 +9,7 @@
  * @returns {number[]} merged array
  */
 function merge(arr1, arr2) {
-  let res = [];
+  const res = [];
   let i = 0;
   let j = 0;
   for (let k = 0; k < arr1.length + arr2.length; k++) {

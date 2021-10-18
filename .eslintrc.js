@@ -8,6 +8,7 @@ module.exports = {
   extends: ['eslint:recommended', 'prettier', 'plugin:jsdoc/recommended'],
   rules: {
     'no-var': 'error',
+    'prefer-const': 'error',
   },
   root: true,
 };

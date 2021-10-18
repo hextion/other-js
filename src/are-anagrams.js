@@ -26,7 +26,7 @@ function areAnagrams(a, b) {
   const aMap = mapFromString(a);
   const bMap = mapFromString(b);
   if (!(aMap.size === bMap.size)) return false;
-  for (let key of aMap.keys()) {
+  for (const key of aMap.keys()) {
     if (!(bMap.has(key) && bMap.get(key) === aMap.get(key))) return false;
   }
   return true;
