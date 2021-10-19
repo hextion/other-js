@@ -1,5 +1,10 @@
 const { unique } = require('../unique');
 
+it('should return new array', () => {
+  const arr = [];
+  expect(unique(arr)).not.toBe(arr);
+});
+
 it('should return empty array', () => {
   expect(unique([])).toMatchObject([]);
 });
