@@ -6,10 +6,8 @@
  * @returns {boolean} whether substring is in string
  */
 function fuzzySearch(substring, string) {
-  let lastIndex = -1;
-  for (let i = 0; i < substring.length; i++) {
-    lastIndex = string.indexOf(substring[i], lastIndex + 1);
-    if (lastIndex === -1) return false;
+  for (let i = 0, lastIndex = -1; i < substring.length; i++) {
+    if ((lastIndex = string.indexOf(substring[i], lastIndex + 1)) === -1) return false;
   }
   return true;
 }
