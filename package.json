@@ -13,9 +13,6 @@
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch"
   },
-  "dependencies": {
-    "assert": "^2.0.0"
-  },
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
