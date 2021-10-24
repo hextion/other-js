@@ -6,9 +6,11 @@
  */
 function reverse(str) {
   let reversed = '';
-  for (let i = str.length - 1; i >= 0; i--) {
-    reversed += str[i];
+
+  while ((reversed += str[str.length - reversed.length - 1]).length < str.length) {
+    // do nothing
   }
+
   return reversed;
 }
 
