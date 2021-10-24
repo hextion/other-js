@@ -11,11 +11,10 @@ function equalsAt(numbers) {
   let tailToHead = 0;
 
   while (head <= tail) {
-    if (headToTail > tailToHead) tailToHead += numbers[tail--];
     if (headToTail < tailToHead) headToTail += numbers[head++];
-    if (headToTail === tailToHead) {
-      if (head === tail) return head;
-      else headToTail += numbers[head++];
+    else {
+      if (headToTail === tailToHead && head === tail) return head;
+      tailToHead += numbers[tail--];
     }
   }
 
