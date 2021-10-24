@@ -11,7 +11,7 @@ function equalsAt(numbers) {
   let tailToHead = 0;
 
   while (head <= tail) {
-    if (tailToHead < headToTail) tailToHead += numbers[tail--];
+    if (headToTail > tailToHead) tailToHead += numbers[tail--];
     if (headToTail < tailToHead) headToTail += numbers[head++];
     if (headToTail === tailToHead) {
       if (head === tail) return head;
