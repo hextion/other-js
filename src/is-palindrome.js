@@ -5,7 +5,7 @@
  * @returns {boolean} whether string is palindrome
  */
 function isPalindrome(str) {
-  const regex = /^[a-zа-яё]$/;
+  const regex = /[a-zа-яё]/;
   let head = 0;
   let tail = str.length - 1;
   while (head <= tail) {
