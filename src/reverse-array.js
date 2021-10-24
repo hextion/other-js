@@ -5,7 +5,13 @@
  * @returns {Array} reversed array
  */
 function reverse(arr) {
-  return arr.reduce((acc, el) => [el].concat(acc), []);
+  const reversed = [];
+
+  while (reversed.push(arr[arr.length - reversed.length - 1]) < arr.length) {
+    // do nothing
+  }
+
+  return reversed;
 }
 
 module.exports = { reverse };
