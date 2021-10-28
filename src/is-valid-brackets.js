@@ -7,25 +7,25 @@
  * @returns {boolean} whether brackets are valid
  */
 function isValidBrackets(str) {
-  const stash = [];
+  const stack = [];
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
     switch (char) {
       case '{':
       case '(':
       case '[':
-        stash.push(char);
+        stack.push(char);
         break;
       case '}':
-        if (stash.pop() === '{') break;
+        if (stack.pop() === '{') break;
       case ')':
-        if (stash.pop() === '(') break;
+        if (stack.pop() === '(') break;
       case ']':
-        if (stash.pop() === '[') break;
+        if (stack.pop() === '[') break;
         return false;
     }
   }
-  return stash.length === 0;
+  return stack.length === 0;
 }
 
 module.exports = { isValidBrackets };
