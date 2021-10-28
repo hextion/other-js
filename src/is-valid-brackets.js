@@ -1,3 +1,5 @@
+/* eslint-disable no-fallthrough */
+
 /**
  * Check if brackets are valid
  *
@@ -11,22 +13,16 @@ function isValidBrackets(str) {
     switch (char) {
       case '{':
       case '(':
-      case '[': {
+      case '[':
         stash.push(char);
         break;
-      }
-      case '}': {
+      case '}':
         if (stash.pop() === '{') break;
-        return false;
-      }
-      case ')': {
+      case ')':
         if (stash.pop() === '(') break;
-        return false;
-      }
-      case ']': {
+      case ']':
         if (stash.pop() === '[') break;
         return false;
-      }
     }
   }
   return stash.length === 0;
