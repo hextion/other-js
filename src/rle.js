@@ -5,16 +5,16 @@
  * @returns {string} output
  */
 function RLE(str) {
-  if (!/^[A-Z]+$/.test(str)) throw new Error('Invalid string: ' + str);
+  if (!/^[A-Z]+$/.test(str)) throw new Error("Invalid string: " + str);
 
   const entry = {
-    char: '',
+    char: "",
     count: 0,
     toString() {
-      return this.char + (this.count > 1 ? this.count : '');
+      return this.char + (this.count > 1 ? this.count : "");
     },
   };
-  let result = '';
+  let result = "";
 
   for (let i = 0; i < str.length; i++) {
     const char = str[i];

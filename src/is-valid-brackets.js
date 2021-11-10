@@ -11,17 +11,17 @@ function isValidBrackets(str) {
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
     switch (char) {
-      case '{':
-      case '(':
-      case '[':
+      case "{":
+      case "(":
+      case "[":
         stack.push(char);
         break;
-      case '}':
-        if (stack.pop() === '{') break;
-      case ')':
-        if (stack.pop() === '(') break;
-      case ']':
-        if (stack.pop() === '[') break;
+      case "}":
+        if (stack.pop() === "{") break;
+      case ")":
+        if (stack.pop() === "(") break;
+      case "]":
+        if (stack.pop() === "[") break;
         return false;
     }
   }

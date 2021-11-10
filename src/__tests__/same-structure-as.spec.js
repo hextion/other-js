@@ -1,12 +1,12 @@
-const { sameStructureAs } = require('../same-structure-as');
+const { sameStructureAs } = require("../same-structure-as");
 
-it('returns true', () => {
+it("returns true", () => {
   expect(sameStructureAs([1, 1, 1], [2, 2, 2])).toBe(true);
   expect(sameStructureAs([1, [1, 1]], [2, [2, 2]])).toBe(true);
   expect(sameStructureAs([[[], []]], [[[], []]])).toBe(true);
 });
 
-it('returns false', () => {
+it("returns false", () => {
   expect(sameStructureAs([1, [1, 1]], [[2, 2], 2])).toBe(false);
   expect(
     sameStructureAs(

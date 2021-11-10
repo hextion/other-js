@@ -1,6 +1,6 @@
-const { makeTree } = require('../tree');
+const { makeTree } = require("../tree");
 
-it('should return tree', () => {
+it("should return tree", () => {
   expect(
     makeTree(
       [

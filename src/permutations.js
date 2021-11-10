@@ -6,7 +6,7 @@
  * @returns {string[]} all permutations of an input string without duplicates
  */
 function permutations(origin) {
-  const entries = [{ prefix: '', chars: origin }];
+  const entries = [{ prefix: "", chars: origin }];
   const strings = new Set();
 
   while (entries.length > 0) {

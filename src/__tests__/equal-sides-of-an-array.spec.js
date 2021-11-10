@@ -1,4 +1,4 @@
-const { equalsAt } = require('../equal-sides-of-an-array');
+const { equalsAt } = require("../equal-sides-of-an-array");
 
 it.each`
   array                    | index
@@ -9,6 +9,6 @@ it.each`
   ${[10, 0, 0, 0, 0]}      | ${0}
   ${[0, 0, 0, 0, 3]}       | ${4}
   ${[1, 4, 3, 2, 1]}       | ${-1}
-`('equal sides of the $array are at $index', ({ array, index }) => {
+`("equal sides of the $array are at $index", ({ array, index }) => {
   expect(equalsAt(array)).toBe(index);
 });

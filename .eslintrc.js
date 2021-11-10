@@ -5,10 +5,10 @@ module.exports = {
     jest: true,
     node: true,
   },
-  extends: ['eslint:recommended', 'prettier', 'plugin:jsdoc/recommended'],
+  extends: ["eslint:recommended", "prettier", "plugin:jsdoc/recommended"],
   rules: {
-    'no-var': 'error',
-    'prefer-const': 'error',
+    "no-var": "error",
+    "prefer-const": "error",
   },
   root: true,
 };
