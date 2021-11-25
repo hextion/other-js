@@ -5,21 +5,21 @@
  * @returns {boolean} whether string is palindrome
  */
 function isPalindrome(str) {
-  const regex = /[a-zа-яё]/;
+  const regex = /[A-ZА-ЯЁ]/i;
   let head = 0;
   let tail = str.length - 1;
   while (head <= tail) {
-    const headChar = str[head].toLowerCase();
+    const headChar = str[head];
     if (!regex.test(headChar)) {
       head++;
       continue;
     }
-    const tailChar = str[tail].toLowerCase();
+    const tailChar = str[tail];
     if (!regex.test(tailChar)) {
       tail--;
       continue;
     }
-    if (headChar === tailChar) {
+    if (new RegExp(headChar, "i").test(tailChar)) {
       head++;
       tail--;
     } else return false;
