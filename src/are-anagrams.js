@@ -1,20 +1,4 @@
 /**
- * Map from string
- *
- * @param {string} str string
- * @returns {Map<string, number>} map
- */
-function mapFromString(str) {
-  const map = new Map();
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    const count = map.has(char) ? map.get(char) + 1 : 1;
-    map.set(char, count);
-  }
-  return map;
-}
-
-/**
  * Check if strings are anagrams
  *
  * @param {string} a string
@@ -23,13 +7,11 @@ function mapFromString(str) {
  */
 function areAnagrams(a, b) {
   if (!(a.length === b.length)) return false;
-  const aMap = mapFromString(a);
-  const bMap = mapFromString(b);
-  if (!(aMap.size === bMap.size)) return false;
-  for (const key of aMap.keys()) {
-    if (!(bMap.has(key) && bMap.get(key) === aMap.get(key))) return false;
-  }
-  return true;
+
+  const aSorted = a.split("").sort().join("");
+  const bSorted = b.split("").sort().join("");
+
+  return aSorted === bSorted;
 }
 
 module.exports = { areAnagrams };
