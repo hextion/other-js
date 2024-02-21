@@ -7,7 +7,7 @@
  */
 function fuzzySearch(substring, string) {
   for (let i = 0, lastIndex = -1; i < substring.length; i++) {
-    if ((lastIndex = string.indexOf(substring[i], lastIndex + 1)) === -1) return false;
+    if ((lastIndex = string.indexOf(substring.at(i), lastIndex + 1)) === -1) return false;
   }
   return true;
 }

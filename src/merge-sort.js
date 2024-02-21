@@ -1,33 +1,35 @@
 /* eslint-disable no-unused-vars */
 
+function* minItem(a, b, compare) {
+  let i = 0;
+  let j = 0;
+  while (i < a.length || j < b.length) {
+    if (i === a.length) {
+      yield b.at(j++);
+    } else if (j === b.length) {
+      yield a.at(i++);
+    } else {
+      const result = compare(a.at(i), b.at(j));
+      if (result > 0) yield b.at(j++);
+      else if (result < 0) yield a.at(i++);
+      else {
+        yield a.at(i++);
+        yield b.at(j++);
+      }
+    }
+  }
+}
+
 /* istanbul ignore next */
 /**
  * Merge arrays
  *
- * @param {number[]} arr1 array
- * @param {number[]} arr2 array
+ * @param {number[]} a array
+ * @param {number[]} b array
  * @returns {number[]} merged array
  */
-function merge(arr1, arr2) {
-  const res = [];
-  let i = 0;
-  let j = 0;
-  for (let k = 0; k < arr1.length + arr2.length; k++) {
-    if (i > arr1.length - 1) {
-      res[k] = arr2[j];
-      j++;
-    } else if (j > arr2.length - 1) {
-      res[k] = arr1[i];
-      i++;
-    } else if (arr1[i] < arr2[j]) {
-      res[k] = arr1[i];
-      i++;
-    } else {
-      res[k] = arr2[j];
-      j++;
-    }
-  }
-  return res;
+function merge(a, b, compare) {
+  return Array.from(minItem(a, b, compare));
 }
 
 /**
@@ -57,12 +59,12 @@ function mergeRecursive(arr1, arr2) {
  * @param {number[]} arr array
  * @returns {number[]} sorted array
  */
-function mergeSort(arr) {
+function mergeSort(arr, compare = (a, b) => a - b) {
   if (arr.length <= 1) {
     return arr;
   }
   const middle = Math.floor(arr.length / 2);
-  return mergeRecursive(mergeSort(arr.slice(0, middle)), mergeSort(arr.slice(middle)));
+  return merge(mergeSort(arr.slice(0, middle), compare), mergeSort(arr.slice(middle), compare), compare);
 }
 
 module.exports = { mergeSort };

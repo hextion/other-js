@@ -7,7 +7,7 @@
  */
 function unique(arr, f = (e) => e) {
   const temp = arr.map(f);
-  return arr.filter((_, index) => temp.indexOf(temp[index]) === index);
+  return arr.filter((_, index) => temp.indexOf(temp.at(index)) === index);
 }
 
 module.exports = { unique };

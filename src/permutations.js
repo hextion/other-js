@@ -1,28 +1,31 @@
 /**
+ *
+ * @param {string} str
+ * @param {string[]} chars
+ * @param {string[]} results
+ * @returns
+ */
+function recur(str, chars, results = []) {
+  if (chars.length === 0 && !results.includes(str)) {
+    return results.concat(str);
+  }
+  return chars.reduce((results, char, index, chars) => {
+    const nextChars = chars.filter((_, i) => !(i === index));
+    const nextStr = str.concat(char);
+
+    return recur(nextStr, nextChars, results);
+  }, results);
+}
+
+/**
  * In this kata you have to create all permutations of an input string and remove duplicates, if present.
  * This means, you have to shuffle all letters from the input in all possible orders.
  *
- * @param {string} origin string
+ * @param {string} str string
  * @returns {string[]} all permutations of an input string without duplicates
  */
-function permutations(origin) {
-  const entries = [{ prefix: "", chars: origin }];
-  const strings = new Set();
-
-  while (entries.length > 0) {
-    const { prefix, chars } = entries.pop();
-
-    for (let i = 0; i < chars.length; i++) {
-      const str = prefix.concat(chars[i]);
-      if (str.length === origin.length) strings.add(str);
-      else {
-        const nextChars = chars.slice(0, i).concat(chars.slice(i + 1));
-        entries.push({ prefix: str, chars: nextChars });
-      }
-    }
-  }
-
-  return Array.from(strings);
+function permutations(str) {
+  return recur("", str.split(""));
 }
 
 module.exports = { permutations };

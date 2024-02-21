@@ -7,11 +7,12 @@
  */
 function makeTree(arr, { keySelector, parentKeySelector }) {
   return arr
-    .map((value) => ({ value }))
-    .map((node, _, flat) => {
+    .map((value) => ({ value, parentNode: null }))
+    .map((node, _, nodes) => {
       const key = keySelector(node.value);
-      let children = flat.filter((node) => parentKeySelector(node.value) === key);
-      children = children.length > 0 ? children : null;
+      const children = nodes
+        .filter((node) => parentKeySelector(node.value) === key)
+        .map((child) => Object.assign(child, { parentNode: node }));
       return Object.assign(node, { children });
     })
     .filter((node) => parentKeySelector(node.value) === null);

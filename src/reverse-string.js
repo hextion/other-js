@@ -9,7 +9,7 @@ function reverse(str) {
 
   let reversed = "";
 
-  while ((reversed += str[str.length - reversed.length - 1]).length < str.length) {
+  while ((reversed += str.at(-reversed.length - 1)).length < str.length) {
     // do nothing
   }
 

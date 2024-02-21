@@ -5,7 +5,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  extends: ["eslint:recommended", "prettier", "plugin:jsdoc/recommended"],
+  extends: ["eslint:recommended", "prettier"],
   rules: {
     "no-var": "error",
     "prefer-const": "error",

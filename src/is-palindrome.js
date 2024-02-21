@@ -9,12 +9,12 @@ function isPalindrome(str) {
   let head = 0;
   let tail = str.length - 1;
   while (head <= tail) {
-    const headChar = str[head];
+    const headChar = str.at(head);
     if (!regex.test(headChar)) {
       head++;
       continue;
     }
-    const tailChar = str[tail];
+    const tailChar = str.at(tail);
     if (!regex.test(tailChar)) {
       tail--;
       continue;

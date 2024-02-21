@@ -8,10 +8,10 @@ it.each([
   "А роза упала на лапу Азора.",
   "Я иду съ мечемъ судия",
   "Я — арка края",
-])("`%s` should be palindrome", (str) => {
+])("`%s` should be a palindrome", (str) => {
   expect(isPalindrome(str)).toBe(true);
 });
 
-it.each(["человек", "Swiss knife", "Ёжик"])("`%s` should NOT be palindrome", (str) => {
+it.each(["человек", "Swiss knife", "Ёжик"])("`%s` should NOT be a palindrome", (str) => {
   expect(isPalindrome(str)).toBe(false);
 });

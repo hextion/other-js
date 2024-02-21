@@ -7,26 +7,21 @@
 function RLE(str) {
   if (!/^[A-Z]+$/.test(str)) throw new Error("Invalid string: " + str);
 
-  const entry = {
-    char: "",
-    count: 0,
-    toString() {
-      return this.char + (this.count > 1 ? this.count : "");
-    },
-  };
   let result = "";
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (entry.char === char) entry.count++;
-    else {
-      result += entry;
-      entry.char = char;
-      entry.count = 1;
+  for (let start = 0, end = 0; end < str.length; end++) {
+    const startChar = str.at(start);
+    const endChar = str.at(end);
+    if (!(startChar === endChar)) {
+      const count = end - start;
+      result += count > 1 ? `${startChar}${count}` : startChar;
+      start = end;
+    }
+    if (end === str.length - 1) {
+      const count = end - start + 1;
+      result += count > 1 ? `${endChar}${count}` : endChar;
     }
   }
-
-  result += entry;
 
   return result;
 }

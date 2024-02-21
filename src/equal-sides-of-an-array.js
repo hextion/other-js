@@ -11,8 +11,8 @@ function equalsAt(numbers) {
   let tailToHead = 0;
 
   while (head < tail) {
-    if (headToTail < tailToHead) headToTail += numbers[++head];
-    else tailToHead += numbers[--tail];
+    if (headToTail < tailToHead) headToTail += numbers.at(++head);
+    else tailToHead += numbers.at(--tail);
   }
 
   return headToTail === tailToHead ? head /* or `tail`, no matter they are equal */ : -1;
